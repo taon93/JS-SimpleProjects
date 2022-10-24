@@ -1,0 +1,14 @@
+#loading, #results {
+  display:none;
+}
+.bg-dark {
+  background-color: #161519;
+}
+#loading {
+  align-self: center;
+  width: 300px;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
