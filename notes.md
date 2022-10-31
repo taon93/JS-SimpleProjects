@@ -102,3 +102,21 @@
 - Look out if you want to return Object literal in lambda: 
   `const sayHello = () => {msg: 'Hello'};` : lambda will take curly braces as a body of the function not Object boundaries. To avoid that wrap Object in normal parentheses: `const sayHello = () => ({msg: 'Hello'});`
 - Single parameter lambda don't need parentheses: ```name => console.log(`Hello ${name}`);```
+
+## MISC
+
+- In ES6 if you are creating Object literal that is inicialized by some predefined values you dont need to specify names of the fields/keys if they are the same as name of the passed value:
+
+```
+const value1 = 'something';
+const value2 = 'somethingElse';
+const value3 = 37;
+
+const objectLiteral1 = {
+  value1: value1,
+  value2: value2,
+  value3: value3 
+};
+const objectLiteral2 = {value1, value2, value3};
+objectLiteral1 === objectLiteral2 // TRUE
+```
