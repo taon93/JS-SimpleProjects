@@ -85,3 +85,19 @@ console.log(Animal.saySomething());
 
 const fish = new Fish('Silurus glanis', 'Siluridae', 10, 'sweet');
 console.log(fish.makeSound());
+
+let re = /[0-9]{3}/g;
+console.log(re.exec('324-543-564'));
+let str = '324-253-123';
+console.log(str.replace(re, 'aaa'));
+
+const sym1 = Symbol();
+const sym2 = sym1
+if(sym1 === sym2) { 
+  console.log("jdsafijids");
+}
+
+let person = {name: 'Maciek', surname: 'Nabialek', age: 29, iq: 129, height: 182, weight: 73};
+
+({name, age, ...rest} = person); 
+console.log(rest);
