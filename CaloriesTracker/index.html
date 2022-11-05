@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Tracker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css"
+</head>
+<body>
+  <!-- Navbar card -->
+  <nav>
+    <div class="nav-wrapper blue">
+      <div class="container">
+        <a href="#" class="brand-logo center">Calorie Tracker</a>
+        <ul class="right">
+          <li><a href="#" class="clr-btn orange lighten-1 btn">Clear</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br>
+
+  <div class="container">
+    <!-- Form Card -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Add Meal / Food Item</span>
+        <form class="col" id="input-form">
+          <div class="row">
+            <div class="input-field col s6 mb-0">
+              <input type="text" placeholder="Food name" id="meal-name">
+              <label for="meal-name">Meal name</label>
+              <div class="error-prompt" id="name-invalid">
+                Provided meal name; <span id="invalid-value"></span> is not correct, it should in range of 1 to 4 words each of lenght up to 10 letters
+              </div>
+            </div>
+            <div class="input-field col s6">
+              <input type="number" placeholder="How many calories" id="calorie-count" class="clear-margin-bottom">
+              <label for="meal-calorie-count">Calories</label>
+              <div class="error-prompt" id="calories-invalid">
+                Provided calorie count; <span id="invalid-value"></span> is not within correct range: 1 - 9999
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <button class="add-btn btn blue darken-3">
+              <i class="fa fa-plus"></i> Add meal
+            </button>
+            <button class="upd-btn btn orange">
+              <i class="fa fa-pencil"></i> Update
+            </button>
+            <button class="dlt-btn btn red">
+              <i class="fa fa-x"></i> Delete
+            </button>
+            <button class="bck-btn btn grey right">
+              <i class="fa fa-chevron-circle-left"></i> Go Back
+            </button>
+          </div>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Calorie count card -->
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+          <h3 class="center-align">Total Calories <span class="calories-value"> 0</span></h3>
+          <ul class="collection" id="item-list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="item.js"></script>
+  <script src="itemController.js"></script>
+  <script src="uiController.js"></script>
+  <script src="app.js"></script>
+  <script
+			  src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+			  integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+			  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

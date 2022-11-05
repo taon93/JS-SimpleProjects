@@ -1,0 +1,11 @@
+.upd-btn, .dlt-btn{
+  display: none;
+}
+.error-prompt, #invalid-value{
+  color: red;
+  font-size: smaller;
+}
+
+#name-invalid, #calories-invalid {
+  display: none;
+}
