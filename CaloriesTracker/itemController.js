@@ -21,10 +21,6 @@ class ItemController {
     this.#totalCalories += value;
   }
 
-  subtractFromTotalCalories(value) {
-    this.#totalCalories -= value;
-  }
-
   setTotalCalories(value) {
     this.#totalCalories = value;
   }  
@@ -54,8 +50,12 @@ class ItemController {
     itemToUpdate.setCalories(itemUpdates.getCalories());
   }
 
-  removeItem(itemToRemove) {
+  getTotalCaloriesCount() {
+    return this.#itemList.reduce((reducedItems, currentItem) => reducedItems + currentItem.getCalories(), 0);
+  }
+
+  removeItem(idOfItemToRemove) {
     this.setItemList(
-      this.#itemList.filter(item => item.getId() !== itemToRemove.getId()));
+      this.#itemList.filter(item => item.getId() !== idOfItemToRemove));
   }
 }

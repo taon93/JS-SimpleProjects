@@ -4,7 +4,6 @@ class Item {
   #id
   static #idInitializer = 0;
   static #getNextIdInitializer() {
-    console.log('Id is updated');
     return Item.#idInitializer++;
   }
   constructor(mealName, calories) {

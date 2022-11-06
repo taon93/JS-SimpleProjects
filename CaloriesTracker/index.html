@@ -5,9 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calorie Tracker</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="styles.css"
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Navbar card -->
@@ -35,14 +40,18 @@
               <input type="text" placeholder="Food name" id="meal-name">
               <label for="meal-name">Meal name</label>
               <div class="error-prompt" id="name-invalid">
-                Provided meal name; <span id="invalid-value"></span> is not correct, it should in range of 1 to 4 words each of lenght up to 10 letters
+                Provided meal name;
+                <span class="invalid-value"></span>
+                is not correct, it should in range of 1 to 4 words each of lenght up to 10 letters
               </div>
             </div>
             <div class="input-field col s6">
-              <input type="number" placeholder="How many calories" id="calorie-count" class="clear-margin-bottom">
-              <label for="meal-calorie-count">Calories</label>
+              <input type="number" placeholder="How many calories" id="calorie-count">
+              <label for="calorie-count">Calories</label>
               <div class="error-prompt" id="calories-invalid">
-                Provided calorie count; <span id="invalid-value"></span> is not within correct range: 1 - 9999
+                Provided calorie count;
+                <span class="invalid-value"></span>
+                is not within correct range: 1 - 9999
               </div>
             </div>
           </div>
@@ -59,8 +68,6 @@
             <button class="bck-btn btn grey right">
               <i class="fa fa-chevron-circle-left"></i> Go Back
             </button>
-          </div>
-            
           </div>
         </form>
       </div>

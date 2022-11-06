@@ -1,4 +1,4 @@
-.upd-btn, .dlt-btn{
+.bck-btn, .upd-btn, .dlt-btn{
   display: none;
 }
 .error-prompt, #invalid-value{

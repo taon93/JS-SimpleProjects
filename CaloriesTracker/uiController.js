@@ -20,7 +20,6 @@ class UiController {
 
   getClearButton() { return this.#clearButton; }
 
-
   setFoodList(foodListQuery) {
     this.#foodList = foodListQuery;
   }
@@ -67,8 +66,8 @@ class UiController {
   getCaloriesInput() { return this.#caloriesInput; }
 
   clearInputs(){
-    this.setMealNameInputValue('');
-    this.setCaloriesInputValue('');
+    this.setMealNameInputValue(null);
+    this.setCaloriesInputValue(null);
   }
 
   clearItemListDisplay() {
@@ -81,10 +80,10 @@ class UiController {
     elem.querySelector('#invalid-value').textContent = '';
   }
 
-  displayErrorMessage(element, inputedValue) {
+  displayErrorMessage(element, inputtedValue) {
     const errorMessage = element.parentElement.querySelector('.error-prompt');
     errorMessage.style.display = 'block';
-    errorMessage.querySelector('#invalid-value').textContent = inputedValue;
+    errorMessage.querySelector('.invalid-value').textContent = inputtedValue;
   }
   
   displayItemAndGetItemsButton(item){
@@ -101,7 +100,7 @@ class UiController {
   }
 
   revealElement(elem) {
-    elem.style.display = 'block';
+    elem.style.display = 'inline';
   }
 
   changeDisplayedButtons(mode) {
@@ -109,28 +108,33 @@ class UiController {
       case 'normal': {
         this.revealElement(this.getClearButton());
         this.revealElement(this.getAddMealButton());
-        this.revealElement(this.getGoBackButton());
+        this.hideElement(this.getGoBackButton());
         this.hideElement(this.getUpdateButton());
         this.hideElement(this.getDeleteButton());
-
         break;
       }
       case 'edit' : {
         this.revealElement(this.getUpdateButton());
         this.revealElement(this.getDeleteButton());
+        this.revealElement(this.getGoBackButton());
         this.hideElement(this.getAddMealButton());
-        this.hideElement(this.getGoBackButton());
         this.hideElement(this.getClearButton());
       }
     }
   }
 
   removeItemById(id) {
-    this.getFoodList().getElementById(`item-${id}`).outerHTML = "";
+    document.getElementById(`item-${id}`).outerHTML = "";
   }
+
   modifyItem(item) {
-    this.getFoodList().getElementById(`item-${item.getId()}`)
+    document.getElementById(`item-${item.getId()}`)
       .innerHTML = this.setFieldsInItem(item.getMealName(), item.getCalories());
+  }
+
+  setInputs(item) {
+    this.setMealNameInputValue(item.getMealName());
+    this.setCaloriesInputValue(item.getCalories());
   }
 
   updateTotalCaloriesDisplayed(calories) {
